@@ -1,0 +1,25 @@
+with open('xxx', 'r') as Inp:
+    mas = [line.split() for line in Inp.read().split('\n')]
+
+for i in range(len(mas)):
+    if mas[i][0] == 'MIX':
+        mas[i][0] = 'MX'
+        mas[i].append('XM')
+    elif mas[i][0] == 'WATER':
+        mas[i][0] = 'WT'
+        mas[i].append('TW')
+    elif mas[i][0] == 'DUST':
+        mas[i][0] = 'DT'
+        mas[i].append('TD')
+    elif mas[i][0] == 'FIRE':
+        mas[i][0] = 'FR'
+        mas[i].append('RF')
+    for j in range(len(mas[i])):
+        if mas[i][j].isdigit():
+            mas[i][j] = ''.join(mas[int(mas[i][j]) - 1])
+o = str(mas[i])
+o = o.replace(', ', "")
+o = o.replace("'", "")
+o = o.replace('[', "")
+o = o.replace(']', "")
+print(o)
