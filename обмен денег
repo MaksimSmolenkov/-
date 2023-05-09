@@ -25,5 +25,4 @@ for s in range(D[0]):
         if ans[s] >= B[b+1]:
             ans[s] += 1
 
-with open('Output.txt', 'w') as Outp:
-    Outp.write(' '.join(map(str, ans)))
+print(ans)
